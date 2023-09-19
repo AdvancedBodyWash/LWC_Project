@@ -30,7 +30,7 @@
     
 </ul>
 
-<audio id="audioPlayer" loop src="Asteroid Rebellion 5.mp3">
+<audio id="audioPlayer" controls autoplay loop src="Asteroid Rebellion 5.mp3">
 Your browser does not support the audio element.
 </audio>
 <button id="audioControl">재생/정지 Audio</button>
@@ -43,10 +43,10 @@ document.getElementById('audioControl').addEventListener('click', function (e)
 
     if(audio.paused){
       audio.play();
-      e.target.textContent = "Pause Audio";
+      e.target.textContent = "재생/정지";
     } else {
       audio.pause();
-      e.target.textContent = "Play Audio";
+      e.target.textContent = "재생/정지";
     }
 });
 </script>
