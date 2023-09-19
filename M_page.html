@@ -35,9 +35,6 @@
 <script>
 const audio = new Audio('Asteroid Rebellion 5.mp3');
 
-// audio의 길이를 초(seconds) 단위로 반환
-// console.log(audio.duration);
-
 // audio를 반복 재생함
 audio.loop = true;
 
@@ -56,9 +53,9 @@ document.getElementById("playButton").addEventListener("click", function() {
    }
 });
 
-window.onload = function() {
+document.addEventListener("DOMContentLoaded", function() {
    document.getElementById("playButton").click();
-};
+});
 </script>
 
 
