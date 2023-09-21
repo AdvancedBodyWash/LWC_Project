@@ -16,46 +16,20 @@
         .game-list li {
             margin-bottom: 1em;
         }
-        
-       /* Overlay styles */
-       .overlay {
-           display: none; 
-           position: fixed; 
-           width: 100%; 
-           height: 100%; 
-           top: 0; 
-           left: 0; 
-           right: 0; 
-           bottom: 0; 
-           background-color:#00000099;
-       }
-
-       /* Iframe styles */
-       #gameFrame {
-          display:none;
-          width :680px;height :520px;margin:auto;top :50%;left :50%;position:absolute ;transform :translate(-50%,-50%);
-      }
     </style>
-
 </head>
 
 <body>
-
 <h1>고전 게임 모음</h1>
-
 
 <!-- 메탈슬러그 시리즈 링크 추가 -->
 <h2 style="color:white;">게임 목록</h2>
 <li><a href="#" onclick="openGame('https://advancedbodywash.github.io/Hosting_Test/MetalSlug.html')">메탈슬러그 시리즈</a></li>
 
 
-    
-<ul id="games">
+</ul>
 
-<div class="overlay">
-<iframe id="gameFrame"></iframe>
-<button onclick="closeGame()" style="position:absolute;top:-20px;left:-20px;">X Close Game</button>
-<div/>
+<iframe id="gameFrame" style="display:none; width:100%; height:500px;"></iframe>
 
 <audio id="audioPlayer" autoplay loop src="Asteroid Rebellion 5.mp3">
 Your browser does not support the audio element.
@@ -63,11 +37,11 @@ Your browser does not support the audio element.
 <button id="audioControl">재생/정지</button>
 
 
-<script type='text/javascript'>
-var audio = document.getElementById('audioPlayer');
-
+<script type="text/javascript">
 document.getElementById('audioControl').addEventListener('click', function (e)
 {
+    var audio = document.getElementById('audioPlayer');
+
     if(audio.paused){
       audio.play();
       e.target.textContent = "재생/정지";
@@ -79,27 +53,10 @@ document.getElementById('audioControl').addEventListener('click', function (e)
 
 function openGame(url) {
   var gameFrame = document.getElementById('gameFrame');
-  var overlay = document.querySelector('.overlay');
+  gameFrame.src = url;
+  gameFrame.style.display = 'block';
+}
   
-   // Pause the music when opening the game
-   audio.pause();
-
-   // Load the game and show the overlay
-   gameFrame.src = url;
-   overlay.style.display = 'block';
-}
-
-function closeGame() {
-  var gameFrame = document.getElementById('gameFrame');
-  var overlay = document.querySelector('.overlay');
-
-   // Clear the game and hide the overlay
-   gameFrame.src = '';
-   overlay.style.display='none';
-
-   // Resume the music when closing the game
-   audio.play();
-}
 </script>
 <script src='https://www.emulatorjs.com/loader.js'></script>
 
