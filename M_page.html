@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    
     <title>고전 게임 모음</title>
     <style>
         body {
@@ -36,10 +32,13 @@
 
 <!-- 메탈슬러그 시리즈 링크 추가 -->
 <h2 style="color:white;">게임 목록</h2>
-<li><a href="https://advancedbodywash.github.io/Hosting_Test/MetalSlug.html">메탈슬러그 시리즈</a></li>
+<li><a href="#" onclick="openGame('https://advancedbodywash.github.io/Hosting_Test/MetalSlug.html')">메탈슬러그 시리즈</a></li>
+
 
     
 </ul>
+
+<iframe id="gameFrame" style="display:none; width:100%; height:500px;"></iframe>
 
 <audio id="audioPlayer" autoplay loop src="Asteroid Rebellion 5.mp3">
 Your browser does not support the audio element.
@@ -60,8 +59,15 @@ document.getElementById('audioControl').addEventListener('click', function (e)
       e.target.textContent = "재생/정지";
     }
 });
+
+function openGame(url) {
+  var gameFrame = document.getElementById('gameFrame');
+  gameFrame.src = url;
+  gameFrame.style.display = 'block';
+}
+  
 </script>
-<script src="https://www.emulatorjs.com/loader.js"></script>
+<script src='https://www.emulatorjs.com/loader.js'></script>
 
 
 </body>
