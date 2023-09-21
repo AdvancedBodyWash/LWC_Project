@@ -16,10 +16,17 @@
         .game-list li {
             margin-bottom: 1em;
         }
+        /* 새로운 스타일 */
+        .blur-effect {
+          filter: blur(8px);
+          transition: all 0.5s ease-out; 
+          pointer-events:none; 
+          user-select:none; 
+       }
     </style>
 </head>
 
-<body>
+<body id="mainBody">
 <h1>고전 게임 모음</h1>
 
 <!-- 메탈슬러그 시리즈 링크 추가 -->
@@ -55,7 +62,16 @@ function openGame(url) {
   var gameFrame = document.getElementById('gameFrame');
   gameFrame.src = url;
   gameFrame.style.display = 'block';
+  
+  // Body에 blur 효과 적용
+  document.body.classList.add("blur-effect");
 }
+  
+// Window가 포커스되면 blur 효과 제거
+window.onfocus = function() { document.body.classList.remove("blur-effect"); };
+
+// window가 unfocus되면 blur효과 적용
+window.onblur= function() { document.body.classList.add("blur-effect"); };
   
 </script>
 <script src='https://www.emulatorjs.com/loader.js'></script>
