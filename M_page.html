@@ -16,25 +16,33 @@
         .game-list li {
             margin-bottom: 1em;
         }
-        /* 새로운 스타일 */
-        .blur-effect {
-          filter: blur(8px);
-          transition: all 0.5s ease-out; 
-          pointer-events:none; 
-          user-select:none; 
+
+       /* 새로운 스타일 */
+       #overlay {
+          position:absolute; 
+          top:0; 
+          left:0; 
+          width:100%; 
+          height:100%; 
+          z-index:-1; 
        }
+
+       .blur-effect{
+         filter: blur(8px);
+         transition : all 500ms ease-in-out;
+         pointer-events:none;  
+      }   
     </style>
 </head>
 
 <body id="mainBody">
+<div id="overlay"></div> <!-- 뒷 배경 -->
 <h1>고전 게임 모음</h1>
 
 <!-- 메탈슬러그 시리즈 링크 추가 -->
 <h2 style="color:white;">게임 목록</h2>
 <li><a href="#" onclick="openGame('https://advancedbodywash.github.io/Hosting_Test/MetalSlug.html')">메탈슬러그 시리즈</a></li>
 
-
-</ul>
 
 <iframe id="gameFrame" style="display:none; width:100%; height:500px;"></iframe>
 
@@ -63,15 +71,15 @@ function openGame(url) {
   gameFrame.src = url;
   gameFrame.style.display = 'block';
   
-  // Body에 blur 효과 적용
-  document.body.classList.add("blur-effect");
+  // overlay에 blur 효과 적용
+  document.getElementById("overlay").classList.add("blur-effect");
 }
   
 // Window가 포커스되면 blur 효과 제거
-window.onfocus = function() { document.body.classList.remove("blur-effect"); };
+window.onfocus = function() { document.getElementById("overlay").classList.remove("blur-effect"); };
 
 // window가 unfocus되면 blur효과 적용
-window.onblur= function() { document.body.classList.add("blur-effect"); };
+window.onblur= function() { document.getElementById("overlay").classList.add("blur-effect"); };
   
 </script>
 <script src='https://www.emulatorjs.com/loader.js'></script>
