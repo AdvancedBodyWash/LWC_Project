@@ -17,12 +17,6 @@
             margin-bottom: 1em;
         }
 
-       /* 새로운 스타일 */
-       .blur-effect{
-         filter: blur(8px);
-         transition : all 500ms ease-in-out;
-      }   
-
       #mainContent {
           position:relative; 
           z-index:1; 
@@ -35,10 +29,19 @@
 
       /* 추가된 스타일 */
       .menu-bar {
-          text-align:center;
-          margin-top:20px; /* 제목과 메뉴 바 사이의 여백 */
-          font-size : 20px; /* 텍스트 크기 조정 */
-      }
+        text-align:center;
+        margin-top:20px; /* 제목과 메뉴 바 사이의 여백 */
+        font-size : 20px; /* 텍스트 크기 조정 */
+    
+        background: #000;
+        color: #0f0;
+        background-image:
+            linear-gradient(90deg, transparent 79px, rgba(255,255,255,.2) 80px),
+            linear-gradient(#1d1b18 .1em, transparent .1em);
+        
+        background-size: 100% 1.2em;
+}
+
       
     </style>
 </head>
@@ -88,18 +91,12 @@ function openGame(url) {
   var gameFrame = document.getElementById('gameFrame');
   gameFrame.src = url;
   gameFrame.style.display = 'block';
-  
-  // mainContent에 blur 효과 적용
-  document.getElementById("mainContent").classList.add("blur-effect");
 }
 
 function closeGame() { // iframe 닫기 함수
    var gameFrame = document.getElementById('gameFrame');
    gameFrame.src = "";
    gameFrame.style.display = 'none';
-   
-   // mainContent의 blur 효과 제거
-   document.getElementById("mainContent").classList.remove("blur-effect");
 }
   
 </script>
