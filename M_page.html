@@ -55,12 +55,26 @@
         padding-left: 10px;
         padding-right: 10px;
     </style>
+
+    .Number_Name {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: green;
+            padding: 10px;
+            z-index: 9999; /* 다른 요소들 위에 나타나게 함 */
+        }
 </head>
 
 <body id="mainBody">
 <div id="mainContent"> <!-- 기존의 모든 내용이 이 div 안에 있어야 합니다 -->
-<center><h1>추억의 고전 게임 모음</h1></center>
 
+    
+<!-- 제목 영역 -->
+<center><h1>추억의 고전 게임 모음</h1></center>
+<div id="Number_Name">1901153 이우찬</div>
+    
 <!-- 메뉴 바 추가 -->
 <div class="menu-bar">
    <span>슈팅</span><span class="separator">|</span>
