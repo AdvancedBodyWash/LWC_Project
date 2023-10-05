@@ -6,66 +6,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
     
     <style>
-        body {
-            background-image: url('M_image.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: #0f0;
-            font-family: 'Nanum Gothic', sans-serif;
+        /* 기존 스타일 생략... */
 
-            /* Body 상단 마진 제거 */
-            margin-top : 0px ;
+        /* 추가된 스타일 */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color:black;
+            margin: 0px; /* top, bottom margin 제거 */
         }
-        .game-list {
-            list-style-type: none;
-        }
-        .game-list li { 
-            margin-bottom: 1em;
+        
+        h4{
+           margin-bottom : 0px ;
+           padding : 10px ;
         }
 
-      #mainContent {
-          position:relative; 
-          z-index:1; 
-      }
-
-      #gameFrame {
-          position:relative; 
-          z-index:2; 
-      }
-
-   h1{
-       background-color:black;
-       margin: 0px; /* top, bottom margin 제거 */
-       padding-top :30px ;
-       padding-bottom :40px ;
-    }
-    h4{
-       background-color:black;
-       margin: 0px; /* top, bottom margin 제거 */
-    }
-
-     .menu-bar {
-      text-align:center;
-      margin: 0px; /* top, bottom margin 제거 */
-      font-size : 20px;
-      font-weight:bold;
-
-     background-image:
-         radial-gradient(circle at center, rgba(85 ,85 ,85 ,1), rgba(0 ,0 ,0 ,1));
-     }
-    .menu-bar span {
-        padding-left: 10px;
-        padding-right: 10px;
+       #audioControl{
+           margin-right : 10px ;
+       }
     </style>
 </head>
 
 <body id="mainBody">
 <div id="mainContent"> <!-- 기존의 모든 내용이 이 div 안에 있어야 합니다 -->
 
-    
 <!-- 제목 영역 -->
+<div class="header">
+   <h4>1901153 이우찬</h4>
+   <button id="audioControl">재생/정지</button>
+</div>
+
 <h4>1901153 이우찬</h4><center><h1>추억의 고전 게임 모음 <br></h1></center>
 
     
