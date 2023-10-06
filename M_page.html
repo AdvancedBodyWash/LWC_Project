@@ -38,12 +38,12 @@
           transform: translate(-50%, -50%); /* 중앙 정렬 */
       }
     #closeButton {
-        display:none;
-        position:absolute;
-        z-index:4;
-        top : 10px; 
-        right : 10px; 
+        display: none;
+        position: absolute;
+        top: 10px; 
+        right: 10px; 
     }
+
 
 
    h1{
@@ -152,10 +152,9 @@ function closeGame() { // iframe 닫기 함수
 <script src='https://www.emulatorjs.com/loader.js'></script>
 
 <div id='gameContainer' style='position:relative;display:inline-block;width:auto;height:auto'>
-<iframe id="gameFrame" style="display:none;width:auto;height:auto;"></iframe> <!-- 가로 세로 길이 조절 -->
 <button id='closeButton' onclick="closeGame()" > 게임 닫기</button>
-
 </div> <!-- mainContent 끝 -->
+<iframe id="gameFrame" style="display:none;width:auto;height:auto;"></iframe> <!-- 가로 세로 길이 조절 -->
 
 </body>
 </html>
