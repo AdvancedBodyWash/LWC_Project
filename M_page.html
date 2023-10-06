@@ -37,6 +37,13 @@
           left: 50%; 
           transform: translate(-50%, -50%); /* 중앙 정렬 */
       }
+    #closeButton {
+        display:none;
+        position:absolute;
+        z-index:4;
+        top : 0px;
+        right : 0px;
+      }
 
    h1{
        background-color:black;
@@ -120,26 +127,32 @@ document.getElementById('audioControl').addEventListener('click', function (e)
 });
 
 function openGame(url) {
-  var gameFrame = document.getElementById('gameFrame');
+   var gameFrame = document.getElementById('gameFrame');
   gameFrame.src = url;
   gameFrame.style.display = 'block';
+  
+  var closeButton = document.getElementById('closeButton');
+  closeButton.style.display='block'; // 게임 시작시 버튼 표시
 }
 
 function closeGame() { // iframe 닫기 함수
    var gameFrame = document.getElementById('gameFrame');
    gameFrame.src = "";
-   gameFrame.style.display = 'none';
+   gameFrame.style.display='none';
+
+   var closeButton=document.getElementById('closeButton');
+   closeButton.style.display='none'; // 게임 종료시 버튼 숨김
 }
   
 </script>
 <script src='https://www.emulatorjs.com/loader.js'></script>
 
 <iframe id="gameFrame" style="display:none; width:70%; height:70%;"></iframe> <!-- 가로 세로 길이 조절 -->
-<button onclick="closeGame()" 
-    style="position:fixed;
+<button id='closeButton' onclick="closeGame()" 
+    style="position:absolute;
             z-index:4;
-            top : 10%;
-            right : 10%;"> 게임 닫기</button>
+            top : -20%;
+            right : -20%;"> 게임 닫기</button>
 
 </div> <!-- mainContent 끝 -->
 
