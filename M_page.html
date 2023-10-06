@@ -61,6 +61,14 @@
     .title-background{
         background-color:black;
     }
+    /* 추가한 스타일 */
+    .section-layout {
+        margin: 0 auto; /* 중앙 정렬 */
+        border: 1px solid #0f0; /* 웹페이지 글자색과 동일한 테두리 색상 */
+        width: 70%; /* 가로 폭 설정. 필요에 따라 조절 가능 */
+        padding: 20px; /* 패딩 설정. 필요에 따라 조절 가능 */
+    }
+        
     </style>
 </head>
 
@@ -81,21 +89,16 @@
    <span>기타 아케이드</span>
 </div>
 
+<div class="section-layout">
+    <h2 style="color:white;">게임 목록</h2>
 
-    
-<!-- 메탈슬러그 시리즈 링크 추가 -->
-<h2 style="color:white;">게임 목록</h2>
+    <ul class="game-list">
+    <li><a href="#" onclick="openGame('https://advancedbodywash.github.io/Hosting_Test/MetalSlugX.html')">메탈슬러그X</a></li>
+    <li><a href="#" onclick="openGame('https://advancedbodywash.github.io/Hosting_Test/tetris.html')">테트리스</a></li>
+    </ul>
+</div>
 
-<ul class="game-list">
-<li><a href="#" onclick="openGame('https://advancedbodywash.github.io/Hosting_Test/MetalSlugX.html')">메탈슬러그X</a></li>
-<li><a href="#" onclick="openGame('https://advancedbodywash.github.io/Hosting_Test/tetris.html')">테트리스</a></li>
-</ul>
-
-<audio id="audioPlayer" autoplay loop src="Asteroid Rebellion 5.mp3">
-</audio>
-
-
-
+<audio id="audioPlayer" autoplay loop src="Asteroid Rebellion 5.mp3"> </audio>
 
 <script type="text/javascript">
 document.getElementById('audioControl').addEventListener('click', function (e)
