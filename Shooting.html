@@ -117,16 +117,14 @@
     </ul>
 
  <select>
-        <optgroup label="메탈슬러그 시리즈">
-            <option value="americano">메탈슬러그1</option>
-            <option value="caffe latte">메탈슬러그2</option>
-            <option value="espresso">메탈슬러그X</option>
+         <optgroup label="메탈슬러그 시리즈">
+            <option value="">게임 선택</option>
+            <option value='https://advancedbodywash.github.io/Hosting_Test/MetalSlug1.html'>메탈슬러그1</option>
+            <option value='https://advancedbodywash.github.io/Hosting_Test/MetalSlug2.html'>메탈슬러그2</option>
+            <option value='https://advancedbodywash.github.io/Hosting_Test/MetalSlugX.html'>메탈슬러그X</option>
         </optgroup>
-        <optgroup label="1945 시리즈">
-            <option value="earl grey">1945</option>
-            <option value="jasmine">1945 스트라이커</option>
-        </optgroup>
-    </select>
+ </select>
+    <button onclick="openSelectedGame()">게임 시작</button>
 </div>
 
 <audio id="audioPlayer" autoplay loop src="Asteroid Rebellion 5.mp3"> </audio>
@@ -161,7 +159,17 @@ function closeGame() { // iframe 닫기 함수
    var closeButton=document.getElementById('closeButton');
    closeButton.style.display='none'; // 게임 종료시 버튼 숨김
 }
+
+ function openSelectedGame() {
+  var gameSelect = document.getElementById('gameSelect');
+  var selectedURL = gameSelect.value;
   
+  if(selectedURL !== "") {
+      openGame(selectedURL);
+  } else {
+      alert("게임을 먼저 선택해주세요!");
+  }
+}   
 </script>
 <script src='https://www.emulatorjs.com/loader.js'></script>
 
