@@ -96,8 +96,6 @@
         color: #fff; /* 글자색 흰색으로 */
         text-align: center;
         line-height: 30px; /* 버튼 내 텍스트 중앙 정렬 */
-        top: 20px; /* iframe 창의 오른쪽 위 모서리에 위치하도록 top 조정 */
-        right: -3px; /* iframe 창의 오른쪽 위 모서리에 위치하도록 right 조정 */
   }
         
     </style>
@@ -184,8 +182,8 @@ function closeGame() { // iframe 닫기 함수
 <script src='https://www.emulatorjs.com/loader.js'></script>
 
 <div id='gameContainer' style='position:relative;display:inline-block;width:70%;height:auto'>
-<iframe id="gameFrame" style="display:none; width:32%; height:70%;"></iframe> <!-- 가로 세로 길이 조절 -->
-<button id='closeButton' onclick="closeGame()">X</button>
+<iframe id="gameFrame" style="display:none; width:32%; height:70%;"><button id='closeButton' onclick="closeGame()">X</button></iframe> <!-- 가로 세로 길이 조절 -->
+
 
 </div> <!-- mainContent 끝 -->
 
