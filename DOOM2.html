@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en-us">
+ <head>
+   <meta charset="utf-8">
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <title>고전 게임 플레이 창</title>
+   <style type="text/css">
+     .dosbox-container { width:640px; height:480px; max-width:100%; }
+   </style>
+ </head>
+  
+ <body style="background-color:#000;">
+   <div id="dosbox"></div>
+   <br/>
+   <button onclick="dosbox.requestFullScreen();">전체 화면</button>
+   
+   <script type="text/javascript" src="https://js-dos.com/cdn/js-dos-api.js"></script>
+   <script type="text/javascript">
+     var dosbox = new Dosbox({
+       id: "dosbox",
+       onload: function (dosbox) {
+         dosbox.run("DOOM2.zip", "./DOOM2.EXE"); //게임 파일 경로
+       },
+       onrun: function (dosbox, app) {
+         console.log("App '" + app + "' is runned");
+       }
+     });
+   </script>
+ </body>
+</html>
