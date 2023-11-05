@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>추억의 고전 게임 모음 사이트</title> 
+    
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            background-image: url('M_image.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #0f0;
+            font-family: 'Nanum Gothic', sans-serif;
+
+            /* Body 상단 마진 제거 */
+            margin-top : 0px ;
+        }
+        .game-list {
+            list-style-type: none;
+        }
+        .game-list li { 
+            margin-bottom: 1em;
+        }
+
+      #mainContent {
+          position:relative; 
+          z-index:1; 
+      }
+
+      #gameFrame {
+          position:fixed; 
+          z-index:3; 
+          top: 50%; 
+          left: 50%; 
+          transform: translate(-50%, -50%); /* 중앙 정렬 */
+      }
+    #closeButton {
+        display:none;
+        position:absolute;
+        z-index:4;
+        top : 10px;
+        right : 10px;
+      }
+
+   h1{
+       background-color:black;
+       margin: 0px; /* top, bottom margin 제거 */
+       padding-top :30px ;
+       padding-bottom :40px ;
+    }
+    h4{
+       background-color:black;
+    }
+
+     .menu-bar {
+      text-align:center;
+      margin: 0px; /* top, bottom margin 제거 */
+      font-size : 20px;
+      font-weight:bold;
+      background-image:
+         radial-gradient(circle at center, rgba(85 ,85 ,85 ,1), rgba(0 ,0 ,0 ,1));
+      padding-top :4px;
+      padding-bottom :4px;
+     }
+    .menu-bar span {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .title-background{
+        background-color:black;
+    }
+    .section-layout {
+        margin-top: 20px; /* 원하는 값으로 변경 */
+        background-color:black;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+        border: 2px solid #0f0; /* 웹페이지 글자색과 동일한 테두리 색상 */
+        width: 55%; /* 가로 폭 설정. 필요에 따라 조절 가능 */
+        padding: 20px; /* 패딩 설정. 필요에 따라 조절 가능 */
+    }
+        a{
+        text-decoration: none; /* 링크의 밑줄 제거 */
+        color: inherit; /* 링크의 색상 제거 */
+    }
+
+    #closeButton {
+        width: 30px; /* 버튼 크기 조정 */
+        height: 30px;
+        border: none; /* 테두리 제거 */
+        font-size: 20px; /* X 아이콘 크기 조정 */
+        background-color: #000; /* 배경색 검은색으로 */
+        color: #fff; /* 글자색 흰색으로 */
+        text-align: center;
+        line-height: 30px; /* 버튼 내 텍스트 중앙 정렬 */
+        top: -195px;
+        right: 50px;
+  }
+        
+    </style>
+</head>
+
+<body id="mainBody">
+<div id="mainContent"> <!-- 기존의 모든 내용이 이 div 안에 있어야 합니다 -->
+
+    
+<!-- 제목 영역 -->
+<div class = "title-background"> 1901153 이우찬<button id="audioControl" style ="float : right"">재생/정지</button></div> <center><h1><a href="M_page.html">추억의 고전 게임 모음<br></a></h1></center> 
+
+    
+<!-- 메뉴 바 추가 -->
+<div class="menu-bar">
+   <span><a href="Shooting.html">슈팅</a></span><span class="separator">|</span>
+   <span><a href="Fighting.html">격투</a></span><span class="separator">|</span>
+   <span>RPG</span><span class="separator">|</span>
+   <span>턴제</span><span class="separator">|</span>
+   <span><a href="etc.html">그 외 게임들</a></span><span class="separator">|</span>
+</div>
+
+<center>
+<div class="section-layout">
+    <h2 style="color:white;">게임 목록</h2>
+
+ <select id="gameSelect">
+      <option value="">---게임 선택---</option>
+         <optgroup label="철권 시리즈">
+            <option value='https://advancedbodywash.github.io/Hosting_Test/tekken3.html'>철권3</option>
+            <option value='https://advancedbodywash.github.io/Hosting_Test/tektagt.html'>철권 태그 토너먼트</option>
+        </optgroup>
+        <optgroup label="킹 오브 파이터즈 시리즈">
+            <option value='https://advancedbodywash.github.io/Hosting_Test/DOOM1.html'>Kof97</option>
+            <option value='https://advancedbodywash.github.io/Hosting_Test/DOOM2.html'>kof98</option>
+        </optgroup>
+ </select>
+<button onclick="openSelectedGame()">게임 시작</button>
+</div>
+</center>
+ 
+    
+<audio id="audioPlayer" autoplay loop src="Asteroid Rebellion 5.mp3"> </audio>
+<script type="text/javascript">
+document.getElementById('audioControl').addEventListener('click', function (e)
+{
+    var audio = document.getElementById('audioPlayer');
+
+    if(audio.paused){
+      audio.play();
+      e.target.textContent = "재생/정지";
+    } else {
+      audio.pause();
+      e.target.textContent = "재생/정지";
+    }
+});
+
+function openGame(url) {
+   var gameFrame = document.getElementById('gameFrame');
+  gameFrame.src = url;
+  gameFrame.style.display = 'block';
+  
+  var closeButton = document.getElementById('closeButton');
+  closeButton.style.display='block'; // 게임 시작시 버튼 표시
+}
+
+function closeGame() { // iframe 닫기 함수
+   var gameFrame = document.getElementById('gameFrame');
+   gameFrame.src = "";
+   gameFrame.style.display='none';
+
+   var closeButton=document.getElementById('closeButton');
+   closeButton.style.display='none'; // 게임 종료시 버튼 숨김
+}
+
+ function openSelectedGame() {
+  var gameSelect = document.getElementById('gameSelect');
+  var selectedURL = gameSelect.value;
+  
+  if(selectedURL !== "") {
+      openGame(selectedURL);
+  } else {
+      alert("게임을 먼저 선택해주세요!");
+  }
+}   
+</script>
+<script src='https://www.emulatorjs.com/loader.js'></script>
+
+<div id='gameContainer' style='position:relative;display:inline-block;width:70%;height:auto'>
+<iframe id="gameFrame" style="display:none; width:32%; height:70%;"></iframe> <!-- 가로 세로 길이 조절 -->
+<button id='closeButton' onclick="closeGame()">X</button>
+
+</div> <!-- mainContent 끝 -->
+
+</body>
+</html>
