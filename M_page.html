@@ -14,7 +14,6 @@
             background-attachment: fixed;
             color: #0f0;
             font-family: 'Nanum Gothic', sans-serif;
-            /* Body 상단 마진 제거 */
             margin-top : 0px ;
         }
         .game-list {
@@ -23,10 +22,12 @@
         .game-list li { 
             margin-bottom: 1em;
         }
+
       #mainContent {
           position:relative; 
           z-index:1; 
       }
+
       #gameFrame {
           position:fixed; 
           z-index:3; 
@@ -41,6 +42,7 @@
         top : 10px;
         right : 10px;
       }
+
    h1{
        background-color:black;
        margin: 0px; /* top, bottom margin 제거 */
@@ -50,6 +52,7 @@
     h4{
        background-color:black;
     }
+
      .menu-bar {
       text-align:center;
       margin: 0px; /* top, bottom margin 제거 */
@@ -64,43 +67,59 @@
         padding-left: 10px;
         padding-right: 10px;
     }
-    .title-background{
+    .title-background {
+        margin-top : 0px;
+        padding-top : 0px;
         background-color:black;
     }
-    /* 추가한 스타일 */
-    .section-layout {
-         margin-top: 60px; /* 원하는 값으로 변경 */
-         background-color:black;
+        
+    .layout {
+        margin-top: 60px;
+        background-color:black;
         margin-right: auto;
         margin-bottom: 0;
         margin-left: auto;
-        border: 2px solid #0f0; /* 웹페이지 글자색과 동일한 테두리 색상 */
-        width: 55%; /* 가로 폭 설정. 필요에 따라 조절 가능 */
-        padding: 20px; /* 패딩 설정. 필요에 따라 조절 가능 */
+        border: 2px solid #0f0;
+        width: 55%; 
+        padding: 20px; 
     }
     a{
-        text-decoration: none; /* 링크의 밑줄 제거 */
-        color: inherit; /* 링크의 색상 제거 */
+        text-decoration: none;
+        color: inherit;
+    }
+    .aside {
+         margin-top: -460px;
+         border: 2px solid #0f0;
+         width: 15%; 
+         margin-right: 3%;
+         padding: 5px;  
+         float: right; 
+         background: black;
     }
         
     </style>
 </head>
+
 <body id="mainBody">
-<div id="mainContent"> <!-- 기존의 모든 내용이 이 div 안에 있어야 합니다 -->
+<div id="mainContent"> 
+
+<header class = "title-background">
+1901153 이우찬<button id="audioControl" style ="float : right"">재생/정지</button> <center><h1><a href="M_page.html">추억의 고전 게임 모음 </a><br></h1></center> 
+</header>
     
-<!-- 제목 영역 (학번 옆이나 위에 대학교, 학부 적어놓기!-->
-<div class = "title-background"> 1901153 이우찬<button id="audioControl" style ="float : right"">재생/정지</button></div> <center><h1><a href="M_page.html">추억의 고전 게임 모음 </a><br></h1></center> 
-    
-<!-- 메뉴 바 추가 -->
-<div class="menu-bar">
+<nav class="menu-bar">
    <span><a href="Shooting.html">슈팅</a></span><span class="separator">|</span>
    <span><a href="Fighting.html">격투</a></span><span class="separator">|</span>
    <span><a href="RPG.html">RPG</a></span><span class="separator">|</span>
    <span><a href="Race.html">레이싱</a></span><span class="separator">|</span>
    <span><a href="etc.html">그 외 게임들</a></span><span class="separator">|</span>
-</div>
-<div class="section-layout">
+</nav>
+
+<section class = "layout">    
    <pre>
+
+
+
           추억의 고전 게임 모음 사이트에 오신 것을 환영합니다!
        
           시대의 발전에 따라 고전 게임은 서서히 잊혀지고 있습니다
@@ -110,16 +129,48 @@
 
           - 네트워크 연결만 되어 있다면 장소와 무관하게 플레이 가능        
           - 다운로드 없이 바로 플레이 
-          - 모바일 플레이 지원
 
           인터넷만 연결되어 있다면 언제 어디서든지 바로 게임을 할 수 있습니다
           메뉴바에 있는 다양한 장르들을 클릭해 여러가지 추억의 게임을 플레이 해보세요!
-          
-       
-          대학교 과제 발표용으로 제작된 웹사이트이며 발표가 끝나면 웹사이트는 닫힐 예정입니다.
+
+          * 현재 이용 가능한 게임
+            - DOOM 시리즈
+            - 메탈슬러그 시리즈
+            - 철권 3
+            - 킹 오브 파이터즈 시리즈
+            - 테트리스
+
+
        
    </pre>
-</div>
+</section>
+
+<aside class = "aside">
+    <pre>
+        * 사이트 이용 팁
+        
+        - 배경음악 재생/정지 
+          -> 오른쪽 위 단추
+        
+        - 게임 조작 관련
+          -> 화면 아래 톱니바퀴 클릭
+          -> 전체 화면 가능 
+
+
+        - 다른 게임을 하고 싶으면?
+          -> 제작자에게 문의하세요!
+
+    </pre>
+</aside>
+
+<footer class = "layout">
+    <pre>
+        대학교 과제용으로 제작된 웹사이트이며 발표가 끝나면 웹사이트는 닫힐 예정입니다.
+        
+        - 소프트웨어학부 컴퓨터정보공학전공 1901153 이우찬 - 
+    </pre>
+</footer>
+
 <audio id="audioPlayer" autoplay loop src="Asteroid Rebellion 5.mp3"> </audio>
 <script type="text/javascript">
 document.getElementById('audioControl').addEventListener('click', function (e)
@@ -158,6 +209,7 @@ function closeGame() { // iframe 닫기 함수
             z-index:4;
             top : 10px;
             right : 10px;"> 게임 닫기</button>
-</div> <!-- mainContent 끝 -->
+</div> <!-- mainContent 끝!!!! -->
+
 </body>
 </html>
