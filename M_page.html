@@ -206,42 +206,10 @@ function closeGame() { // iframe 닫기 함수
 <iframe id="gameFrame" style="display:none; width:32%; height:70%;"></iframe> <!-- 가로 세로 길이 조절 -->
 <button id='closeButton' onclick="closeGame()" 
     style="position:absolute;
-document.getElementById('audioControl').addEventListener('click', function (e)
-{
-    var audio = document.getElementById('audioPlayer');
-    if(audio.paused){
-      audio.play();
-      e.target.textContent = "재생/정지";
-    } else {
-      audio.pause();
-      e.target.textContent = "재생/정지";
-    }
-});
-function openGame(url) {
-   var gameFrame = document.getElementById('gameFrame');
-  gameFrame.src = url;
-  gameFrame.style.display = 'block';
-  
-  var closeButton = document.getElementById('closeButton');
-  closeButton.style.display='block'; // 게임 시작시 버튼 표시
-}
-function closeGame() { // iframe 닫기 함수
-   var gameFrame = document.getElementById('gameFrame');
-   gameFrame.src = "";
-   gameFrame.style.display='none';
-   var closeButton=document.getElementById('closeButton');
-   closeButton.style.display='none'; // 게임 종료시 버튼 숨김
-}
-  
-</script>
-<script src='https://www.emulatorjs.com/loader.js'></script>
-<div id='gameContainer' style='position:relative;display:inline-block;width:70%;height:auto'>
-<iframe id="gameFrame" style="display:none; width:32%; height:70%;"></iframe> <!-- 가로 세로 길이 조절 -->
-<button id='closeButton' onclick="closeGame()" 
-    style="position:absolute;
             z-index:4;
             top : 10px;
             right : 10px;"> 게임 닫기</button>
-</div>
+</div> <!-- mainContent 끝!!!! -->
+
 </body>
 </html>
