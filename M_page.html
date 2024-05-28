@@ -2,7 +2,9 @@
 <html>
 <head>
     <title>추억의 고전 게임 모음 사이트</title> 
+    
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    
     <style>
         body {
             background-image: url('M_image.jpg');
@@ -12,7 +14,7 @@
             background-attachment: fixed;
             color: #0f0;
             font-family: 'Nanum Gothic', sans-serif;
-            margin-top: 0px;
+            margin-top : 0px ;
         }
         .game-list {
             list-style-type: none;
@@ -20,91 +22,104 @@
         .game-list li { 
             margin-bottom: 1em;
         }
-        #mainContent {
-            position:relative; 
-            z-index:1; 
-        }
-        #gameFrame {
-            position:fixed; 
-            z-index:3; 
-            top: 50%; 
-            left: 50%; 
-            transform: translate(-50%, -50%); /* 중앙 정렬 */
-        }
-        #closeButton {
-            display:none;
-            position:absolute;
-            z-index:4;
-            top: 10px;
-            right: 10px;
-        }
-        h1{
-            background-color:black;
-            margin: 0px; /* top, bottom margin 제거 */
-            padding-top: 30px;
-            padding-bottom: 40px;
-        }
-        h4{
-            background-color:black;
-        }
-        .menu-bar {
-            text-align:center;
-            margin: 0px; /* top, bottom margin 제거 */
-            font-size: 20px;
-            font-weight:bold;
-            background-image: radial-gradient(circle at center, rgba(85, 85, 85, 1), rgba(0, 0, 0, 1));
-            padding-top: 4px;
-            padding-bottom: 4px;
-        }
-        .menu-bar span {
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-        .title-background {
-            margin-top: 0px;
-            padding-top: 0px;
-            background-color:black;
-        }
-        .layout {
-            margin-top: 60px;
-            background-color:black;
-            margin-right: auto;
-            margin-bottom: 0;
-            margin-left: auto;
-            border: 2px solid #0f0;
-            width: 55%; 
-            padding: 20px; 
-        }
-        a{
-            text-decoration: none;
-            color: inherit;
-        }
-        .aside {
-            margin-top: -460px;
-            border: 2px solid #0f0;
-            width: 15%; 
-            margin-right: 3%;
-            padding: 5px;  
-            float: right; 
-            background: black;
-        }
+
+      #mainContent {
+          position:relative; 
+          z-index:1; 
+      }
+
+      #gameFrame {
+          position:fixed; 
+          z-index:3; 
+          top: 50%; 
+          left: 50%; 
+          transform: translate(-50%, -50%); /* 중앙 정렬 */
+      }
+    #closeButton {
+        display:none;
+        position:absolute;
+        z-index:4;
+        top : 10px;
+        right : 10px;
+      }
+
+   h1{
+       background-color:black;
+       margin: 0px; /* top, bottom margin 제거 */
+       padding-top :30px ;
+       padding-bottom :40px ;
+    }
+    h4{
+       background-color:black;
+    }
+
+     .menu-bar {
+      text-align:center;
+      margin: 0px; /* top, bottom margin 제거 */
+      font-size : 20px;
+      font-weight:bold;
+      background-image:
+         radial-gradient(circle at center, rgba(85 ,85 ,85 ,1), rgba(0 ,0 ,0 ,1));
+      padding-top :4px;
+      padding-bottom :4px;
+     }
+    .menu-bar span {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .title-background {
+        margin-top : 0px;
+        padding-top : 0px;
+        background-color:black;
+    }
+        
+    .layout {
+        margin-top: 60px;
+        background-color:black;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+        border: 2px solid #0f0;
+        width: 55%; 
+        padding: 20px; 
+    }
+    a{
+        text-decoration: none;
+        color: inherit;
+    }
+    .aside {
+         margin-top: -460px;
+         border: 2px solid #0f0;
+         width: 15%; 
+         margin-right: 3%;
+         padding: 5px;  
+         float: right; 
+         background: black;
+    }
+        
     </style>
 </head>
+
 <body id="mainBody">
 <div id="mainContent"> 
-<header class="title-background">
-    1901153 이우찬<button id="audioControl" style="float: right">재생/정지</button>
-    <center><h1><a href="M_page.html">추억의 고전 게임 모음 </a><br></h1></center> 
+
+<header class = "title-background">
+1901153 이우찬<button id="audioControl" style ="float : right"">재생/정지</button> <center><h1><a href="M_page.html">추억의 고전 게임 모음 </a><br></h1></center> 
 </header>
+    
 <nav class="menu-bar">
-    <span><a href="Shooting.html">슈팅</a></span><span class="separator">|</span>
-    <span><a href="Fighting.html">격투</a></span><span class="separator">|</span>
-    <span><a href="RPG.html">RPG</a></span><span class="separator">|</span>
-    <span><a href="Race.html">레이싱</a></span><span class="separator">|</span>
-    <span><a href="etc.html">그 외 게임들</a></span><span class="separator">|</span>
+   <span><a href="Shooting.html">슈팅</a></span><span class="separator">|</span>
+   <span><a href="Fighting.html">격투</a></span><span class="separator">|</span>
+   <span><a href="RPG.html">RPG</a></span><span class="separator">|</span>
+   <span><a href="Race.html">레이싱</a></span><span class="separator">|</span>
+   <span><a href="etc.html">그 외 게임들</a></span><span class="separator">|</span>
 </nav>
-<section class="layout">    
+
+<section class = "layout">    
    <pre>
+
+
+
           추억의 고전 게임 모음 사이트에 오신 것을 환영합니다!
        
           시대의 발전에 따라 고전 게임은 서서히 잊혀지고 있습니다
@@ -124,82 +139,78 @@
             - 철권 3
             - 킹 오브 파이터즈 시리즈
             - 테트리스
+
+
+       
    </pre>
 </section>
-<aside class="aside">
-    <pre>
-        
-    * 사이트 이용 팁   
-       - 배경음악 재생/정지 
-         -> 오른쪽 위 단추
-        
-       - 게임 조작 관련
-         -> 화면 아래 톱니바퀴 클릭
-         -> 전체 화면 가능 
 
-       - 다른 게임을 하고 싶으면?
-         -> 사이트 제작자에게 문의하세요!
+<aside class = "aside">
+    <pre>
+        * 사이트 이용 팁
         
+        - 배경음악 재생/정지 
+          -> 오른쪽 위 단추
+        
+        - 게임 조작 관련
+          -> 화면 아래 톱니바퀴 클릭
+          -> 전체 화면 가능 
+
+
+        - 다른 게임을 하고 싶으면?
+          -> 사이트 제작자에게 문의하세요!
+
     </pre>
 </aside>
-<footer class="layout">
+
+<footer class = "layout">
     <pre>
         대학교 과제용으로 제작된 웹사이트이며 발표가 끝나면 웹사이트는 닫힐 예정입니다.
         
         - 소프트웨어학부 컴퓨터정보공학전공 1901153 이우찬 - 
     </pre>
 </footer>
+
 <audio id="audioPlayer" autoplay loop src="Asteroid Rebellion 5.mp3"> </audio>
 <script type="text/javascript">
-    document.getElementById('audioControl').addEventListener('click', function (e) {
-        var audio = document.getElementById('audioPlayer');
-        if(audio.paused){
-            audio.play();
-            e.target.textContent = "정지";
-        } else {
-            audio.pause();
-            e.target.textContent = "재생";
-        }
-    });
-    
-    // 음악이 이미 재생되었는지 확인하는 변수 추가
-    var isMusicPlayed = false;
-    
-    // 웹페이지 전체 영역에 커서를 올렸을 때 음악 재생
-    document.getElementById('mainBody').addEventListener('mouseover', function() {
-        var audio = document.getElementById('audioPlayer');
-        // 음악이 아직 재생되지 않았다면 재생
-        if (!isMusicPlayed) {
-            audio.play();
-            isMusicPlayed = true; // 음악 재생 상태로 변경
-        }
-    });
-    
-    function openGame(url) {
-        var gameFrame = document.getElementById('gameFrame');
-        gameFrame.src = url;
-        gameFrame.style.display = 'block';
-        
-        var closeButton = document.getElementById('closeButton');
-        closeButton.style.display='block'; // 게임 시작시 버튼 표시
+document.getElementById('audioControl').addEventListener('click', function (e)
+{
+    var audio = document.getElementById('audioPlayer');
+    if(audio.paused){
+      audio.play();
+      e.target.textContent = "재생/정지";
+    } else {
+      audio.pause();
+      e.target.textContent = "재생/정지";
     }
-    
-    function closeGame() { // iframe 닫기 함수
-        var gameFrame = document.getElementById('gameFrame');
-        gameFrame.src = "";
-        gameFrame.style.display='none';
-        var closeButton=document.getElementById('closeButton');
-        closeButton.style.display='none'; // 게임 종료시 버튼 숨김
-    }
+});
+function openGame(url) {
+   var gameFrame = document.getElementById('gameFrame');
+  gameFrame.src = url;
+  gameFrame.style.display = 'block';
+  
+  var closeButton = document.getElementById('closeButton');
+  closeButton.style.display='block'; // 게임 시작시 버튼 표시
+}
+function closeGame() { // iframe 닫기 함수
+   var gameFrame = document.getElementById('gameFrame');
+   gameFrame.src = "";
+   gameFrame.style.display='none';
+   var closeButton=document.getElementById('closeButton');
+   closeButton.style.display='none'; // 게임 종료시 버튼 숨김
+}
+  
 </script>
 <script src='https://www.emulatorjs.com/loader.js'></script>
 <div id='gameContainer' style='position:relative;display:inline-block;width:70%;height:auto'>
-    <iframe id="gameFrame" style="display:none; width:32%; height:70%;"></iframe> <!-- 가로 세로 길이 조절 -->
-    <button id='closeButton' onclick="closeGame()" 
-        style="position:absolute;
-                z-index:4;
-                top : 10px;
-                right : 10px;"> 게임 닫기</button>
+<iframe id="gameFrame" style="display:none; width:32%; height:70%;"></iframe> <!-- 가로 세로 길이 조절 -->
+<button id='closeButton' onclick="closeGame()" 
+    style="position:absolute;
+            z-index:4;
+            top : 10px;
+            right : 10px;"> 게임 닫기</button>
 </div> <!-- mainContent 끝!!!! -->
+
 </body>
 </html>
+
